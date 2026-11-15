@@ -4,21 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Umbral</title>
-  <meta name="description" content="A collection of forked software that makes Linux virtual desktops easier to use in remote situations.">
+  <meta name="description" content="Syzygy hosts a Linux desktop; Eclipse and Occultation stream it to a Linux computer or an Android device.">
   <meta name="theme-color" content="#141218">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-repo="NotADeveloper4665/Umbral">
+<body>
 
   <header class="app-bar">
     <a class="app-bar__title" href="#top">Umbral</a>
     <nav class="app-bar__nav" aria-label="Primary">
-      <a href="#features">Components</a>
-      <a href="#install">Install</a>
-      <a href="#usage">Usage</a>
+      <a href="#components">Components</a>
+      <a href="#how">How it fits</a>
+      <a href="#install-host">Install</a>
+      <a href="#pairing">Pairing</a>
+      <a href="#builds">Builds</a>
     </nav>
     <a class="btn btn--tonal" href="https://github.com/NotADeveloper4665/Umbral">GitHub</a>
   </header>
@@ -27,109 +29,307 @@
 
     <section class="hero">
       <div class="hero__text">
-        <p class="overline" data-gh="version">Latest release</p>
+        <p class="overline">Development builds</p>
         <h1>Linux virtual desktops that work better over a remote connection.</h1>
         <p class="lead">
-          Umbral is a host and two clients, forked from Apollo and Moonlight, for streaming a
-          Linux desktop to another machine or your phone.
+          Syzygy hosts the desktop. Eclipse and Occultation connect to it from another Linux
+          computer or an Android device.
         </p>
         <div class="actions">
-          <a class="btn btn--filled" href="#install">Get started</a>
+          <a class="btn btn--filled" href="#install-host">Get started</a>
           <a class="btn btn--outlined" href="https://github.com/NotADeveloper4665/Umbral">View source</a>
         </div>
         <dl class="facts">
-          <div><dt>Stars</dt><dd data-gh="stars">–</dd></div>
-          <div><dt>Language</dt><dd data-gh="language">–</dd></div>
-          <div><dt>License</dt><dd data-gh="license">–</dd></div>
-          <div><dt>Updated</dt><dd data-gh="updated">–</dd></div>
+          <div><dt>Host</dt><dd>Linux</dd></div>
+          <div><dt>Clients</dt><dd>Linux, Android 5.0+</dd></div>
+          <div><dt>Based on</dt><dd>Apollo, Moonlight</dd></div>
+          <div><dt>Status</dt><dd>Early development</dd></div>
         </dl>
       </div>
 
-      <div class="card code-card" aria-label="Quick install">
+      <div class="card code-card" aria-label="Quick start on the host">
         <div class="code-card__bar">
-          <span>terminal</span>
-          <button class="icon-btn" type="button" data-copy="#quick" aria-label="Copy command">
+          <span>on the Linux host</span>
+          <button class="icon-btn" type="button" data-copy="#quick" aria-label="Copy commands">
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
           </button>
         </div>
-<pre><code id="quick">git clone https://github.com/NotADeveloper4665/Umbral.git
-cd Umbral</code></pre>
+<pre><code id="quick">curl -fsSL https://raw.githubusercontent.com/NotADeveloper4665/Syzygy/main/scripts/install-syzygy.sh | bash
+syzygy -s -auto
+syzygy -psk</code></pre>
       </div>
     </section>
 
-    <section id="features" class="section">
+    <section id="components" class="section">
       <h2>Components</h2>
-      <p class="muted">Umbral is three projects that work together: one host and two clients.</p>
+      <p class="muted">Three projects that work together: one host and two clients.</p>
       <ul class="rows">
         <li>
           <div>
             <h3><a href="https://github.com/NotADeveloper4665/Syzygy">Syzygy</a></h3>
-            <p class="tag">Host · fork of Apollo</p>
+            <p class="tag">Host · fork of Apollo · GPL-3.0 <span data-pushed="NotADeveloper4665/Syzygy"></span></p>
           </div>
-          <p>The self-hosted side that streams a desktop to Moonlight-compatible clients. It adds a Linux command-line setup, passkey and six-word phrase pairing, and a headless Wayland desktop mode that works over SSH. Licensed GPL-3.0. It's an early development build.</p>
+          <p>A self-hosted streaming host for Moonlight-compatible clients. It adds Linux command-line options, a persistent pairing passkey shown as a six-word phrase, and a headless Wayland desktop mode that runs over SSH with no monitor or graphical login. Password pairing, key rotation, device revocation and Kyber transport are not built yet.</p>
         </li>
         <li>
           <div>
             <h3><a href="https://github.com/NotADeveloper4665/Eclipse">Eclipse</a></h3>
-            <p class="tag">Desktop client · based on Moonlight</p>
+            <p class="tag">Linux client · based on Moonlight <span data-pushed="NotADeveloper4665/Eclipse"></span></p>
           </div>
-          <p>The desktop streaming client. It has an in-session control center, Tailscale discovery, per-PC stream profiles, decoder diagnostics, and key-based pairing with Syzygy hosts. It keeps Moonlight's license and upstream notices.</p>
+          <p>The desktop client. It has an in-session control center, Tailscale discovery, per-PC stream profiles, decoder diagnostics, and Syzygy phrase pairing. It keeps Moonlight's license and upstream notices.</p>
         </li>
         <li>
           <div>
             <h3><a href="https://github.com/NotADeveloper4665/Occultation">Occultation</a></h3>
-            <p class="tag">Android client · fork of Artemide</p>
+            <p class="tag">Android client · fork of Artemide <span data-pushed="NotADeveloper4665/Occultation"></span></p>
           </div>
-          <p>Eclipse for Android, built on Artemide (itself based on Moonlight Android). It pairs with Syzygy using a six-word phrase, can limit input to view-only, and can skip the phrase when connected through Tailscale. It keeps the upstream GPL license and copyright notices.</p>
+          <p>Eclipse's Syzygy pairing and streaming controls on Android, built on Artemide's mobile decoder work. It can run view-only or allow keyboard, mouse and controller input separately, and can connect straight to the host's Desktop app. It keeps the upstream GPL license and notices.</p>
         </li>
       </ul>
     </section>
 
-    <section id="install" class="section section--split">
+    <section id="how" class="section section--split">
       <div>
-        <h2>Install</h2>
-        <p class="muted">Requirements: list the distro, packages and versions you've tested on.</p>
+        <h2>How they fit</h2>
+        <p class="muted">The host and a client are paired once. After that the client reconnects on its own.</p>
       </div>
-      <div class="card code-card">
-        <div class="code-card__bar">
-          <span>shell</span>
-          <button class="icon-btn" type="button" data-copy="#install-code" aria-label="Copy command">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
-          </button>
+      <ol class="steps">
+        <li>
+          <h3>Run Syzygy on the Linux machine</h3>
+          <p>This is the computer whose desktop you want to reach. It can be headless.</p>
+        </li>
+        <li>
+          <h3>Install a client</h3>
+          <p>Eclipse on another Linux computer, or Occultation on Android.</p>
+        </li>
+        <li>
+          <h3>Pair with the six-word phrase</h3>
+          <p>Add the host by address or discovery, then enter the phrase from <code>syzygy -psk</code>. Over your own Tailscale network, the phrase can be skipped.</p>
+        </li>
+        <li>
+          <h3>Connect</h3>
+          <p>The client saves a certificate, not the phrase, and uses it for every later connection.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="install-host" class="section section--split">
+      <div>
+        <h2>Install the host</h2>
+        <p class="muted">Syzygy on Linux. The source installer supports apt, dnf, zypper, pacman and apk systems.</p>
+      </div>
+      <div class="stack">
+        <div class="card code-card">
+          <div class="code-card__bar">
+            <span>source installer</span>
+            <button class="icon-btn" type="button" data-copy="#host-src" aria-label="Copy command">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+            </button>
+          </div>
+<pre><code id="host-src">curl -fsSL https://raw.githubusercontent.com/NotADeveloper4665/Syzygy/main/scripts/install-syzygy.sh | bash</code></pre>
         </div>
-<pre><code id="install-code">git clone https://github.com/NotADeveloper4665/Umbral.git
-cd Umbral
-# build steps go here once the code is in the repo</code></pre>
+        <p class="note">
+          It installs build dependencies, builds the latest <code>main</code>, creates your host key and
+          prints the start command, <code>syzygy -s -auto</code>. It asks for sudo only to install
+          packages or write under <code>/usr/local</code>, and leaves the server stopped. Set
+          <code>SYZYGY_BRANCH</code> to pick a branch or tag. You can
+          <a href="https://github.com/NotADeveloper4665/Syzygy/blob/main/scripts/install-syzygy.sh">read the script</a>
+          before running it.
+        </p>
+
+        <div class="card code-card">
+          <div class="code-card__bar">
+            <span>Fedora 44 x86_64 · development RPM</span>
+            <button class="icon-btn" type="button" data-copy="#host-rpm" aria-label="Copy command">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+            </button>
+          </div>
+<pre><code id="host-rpm">curl -fsSL https://raw.githubusercontent.com/NotADeveloper4665/Syzygy/main/scripts/update-syzygy-dev-rpm.sh | bash</code></pre>
+        </div>
+        <p class="note">
+          Installs the rolling build from the <a href="https://github.com/NotADeveloper4665/Syzygy/releases/tag/dev">dev release</a>.
+          The updater checks the checksum and your Fedora version and CPU, then installs with
+          <code>dnf</code>. It keeps your configuration and pairing keys and leaves running servers alone.
+          Start it with <code>/usr/bin/syzygy</code> so you get the RPM, not an older source install.
+        </p>
+
+        <div class="card code-card">
+          <div class="code-card__bar">
+            <span>headless, no monitor or login</span>
+            <button class="icon-btn" type="button" data-copy="#host-headless" aria-label="Copy commands">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+            </button>
+          </div>
+<pre><code id="host-headless">curl -fsSL https://raw.githubusercontent.com/NotADeveloper4665/Syzygy/main/scripts/install-syzygy.sh | SYZYGY_INSTALL_HEADLESS=1 bash
+syzygy -s -auto -headless -psk</code></pre>
+        </div>
+        <p class="note">
+          Starts a private KDE Wayland desktop that works over SSH. The default size is 1920x1080;
+          set <code>SYZYGY_HEADLESS_SIZE=2560x1440</code> to change it. The installer adds the runtime
+          automatically on Fedora only. Other distributions need the runtime programs from the
+          <a href="https://github.com/NotADeveloper4665/Syzygy#headless-linux-server-development">README</a>
+          installed by hand. Reconnect SSH after install if it added you to the <code>render</code> group.
+        </p>
       </div>
     </section>
 
-    <section id="usage" class="section section--split">
+    <section id="install-eclipse" class="section section--split">
       <div>
-        <h2>Usage</h2>
-        <p class="muted">Show the smallest example that starts a remote desktop session.</p>
+        <h2>Install Eclipse</h2>
+        <p class="muted">The Linux desktop client. Download from the <a href="https://github.com/NotADeveloper4665/Eclipse/releases/tag/dev">dev release</a>, which carries a Fedora 44 x86_64 RPM, an x86_64 Flatpak, the source, and checksums.</p>
       </div>
-      <div class="card code-card">
-        <div class="code-card__bar">
-          <span>shell</span>
-          <button class="icon-btn" type="button" data-copy="#usage-code" aria-label="Copy code">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
-          </button>
+      <div class="stack">
+        <div class="card code-card">
+          <div class="code-card__bar">
+            <span>Fedora RPM</span>
+            <button class="icon-btn" type="button" data-copy="#eclipse-rpm" aria-label="Copy commands">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+            </button>
+          </div>
+<pre><code id="eclipse-rpm">sha256sum -c SHA256SUMS --ignore-missing
+sudo dnf install ./moonlight-eclipse-VERSION.x86_64.rpm</code></pre>
         </div>
-<pre><code id="usage-code"># replace with the real command once it exists
-./umbral start --help</code></pre>
+        <div class="card code-card">
+          <div class="code-card__bar">
+            <span>Flatpak</span>
+            <button class="icon-btn" type="button" data-copy="#eclipse-flatpak" aria-label="Copy commands">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+            </button>
+          </div>
+<pre><code id="eclipse-flatpak">flatpak install --user ./Eclipse-VERSION-x86_64.flatpak
+flatpak run io.github.notadeveloper4665.Eclipse</code></pre>
+        </div>
+        <p class="note">
+          Use the file names you downloaded in place of <code>VERSION</code>, and install the main RPM,
+          not the debuginfo or debugsource ones. The Flatpak needs Flatpak set up with Flathub. Its
+          sandbox hides the host's Tailscale service, so Tailscale discovery and the
+          microphone, webcam and USB forwarding actions don't work there. You can still connect to a
+          Tailscale host by typing its address. A versioned
+          <a href="https://github.com/NotADeveloper4665/Eclipse/releases/tag/eclipse-0.5.6">0.5.6 preview</a>
+          is also available.
+        </p>
       </div>
+    </section>
+
+    <section id="install-android" class="section section--split">
+      <div>
+        <h2>Install Occultation</h2>
+        <p class="muted">The Android client. It needs Android 5.0 or newer, and installs next to Artemide, Artemis and Moonlight.</p>
+      </div>
+      <div class="stack">
+        <p class="actions-inline">
+          <a class="btn btn--filled" href="https://github.com/NotADeveloper4665/Occultation/releases/download/dev/Occultation-universal.apk">Download universal APK</a>
+          <a class="btn btn--outlined" href="https://github.com/NotADeveloper4665/Occultation/releases/tag/dev">All development APKs</a>
+        </p>
+        <p class="note">
+          The universal APK covers ARMv7, ARM64, x86 and x86-64. The release page also lists
+          CPU-specific APKs. These are debug-signed development builds, not production releases. A
+          signing-key change means older development APKs may need to be uninstalled first.
+        </p>
+        <div class="card code-card">
+          <div class="code-card__bar">
+            <span>build from source · Java 17, Android SDK 36, NDK 27.0.12077973</span>
+            <button class="icon-btn" type="button" data-copy="#android-src" aria-label="Copy commands">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+            </button>
+          </div>
+<pre><code id="android-src">git submodule update --init --recursive
+./gradlew :app:assembleNonRoot_gameDebug</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="pairing" class="section">
+      <h2>Pairing</h2>
+      <p class="muted">Anyone who holds the phrase can pair with full host permissions. Share it only with devices you trust.</p>
+      <ul class="rows">
+        <li>
+          <div>
+            <h3>Six-word phrase</h3>
+            <p class="tag">Works on every connection</p>
+          </div>
+          <p>
+            Run <code>syzygy -psk</code> on the host to print the phrase. In Eclipse, add the host, click its
+            card, choose <strong>Syzygy pairing phrase</strong> and paste it. In Occultation, use
+            <strong>Add Computer</strong>, or tap an unpaired host and choose
+            <strong>Pair with Syzygy phrase</strong>. Case is ignored, and spaces and hyphens are
+            interchangeable. The phrase stays the same across restarts and can enroll several clients.
+          </p>
+        </li>
+        <li>
+          <div>
+            <h3>Automatic over Tailscale</h3>
+            <p class="tag">Off by default</p>
+          </div>
+          <p>
+            Start the host with <code>-tails</code>, or turn on <strong>Network → Automatically authorize
+            same-tailnet devices</strong> in the Syzygy web UI. Clients on the host's own tailnet then pair with no phrase.
+            Enter the host's literal Tailscale IP, not a hostname. Linux needs a running Tailscale tunnel and the
+            <code>/run/tailscale/tailscaled.sock</code> socket. Eclipse needs <code>/usr/bin/tailscale</code>, so
+            it works on Linux only, and not in the Flatpak. Occultation needs the Tailscale VPN active on Android 6
+            or newer. Shared-in nodes are rejected.
+          </p>
+        </li>
+        <li>
+          <div>
+            <h3>PIN</h3>
+            <p class="tag">The standard Moonlight way</p>
+          </div>
+          <p>Normal PIN pairing and streaming still work. In Occultation, leave the key field blank in Add Computer.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="builds" class="section">
+      <h2>Development builds</h2>
+      <p class="muted">All three are early. Builds update when checks pass on <code>main</code>.</p>
+      <ul class="rows">
+        <li>
+          <div>
+            <h3>Syzygy</h3>
+            <p class="tag">Rolling RPM channel</p>
+          </div>
+          <p>
+            A Fedora 44 x86_64 RPM on the <a href="https://github.com/NotADeveloper4665/Syzygy/releases/tag/dev">dev release</a>.
+            Other distributions build from source. Build logs are in
+            <a href="https://github.com/NotADeveloper4665/Syzygy/actions">GitHub Actions</a>. Headless mode passes a software-rendered CI
+            test, but still needs testing on real NVIDIA, Intel and AMD hardware.
+          </p>
+        </li>
+        <li>
+          <div>
+            <h3>Eclipse</h3>
+            <p class="tag">RPM, Flatpak, source</p>
+          </div>
+          <p>
+            The <a href="https://github.com/NotADeveloper4665/Eclipse/releases/tag/dev">dev release</a> updates only after the RPM,
+            Flatpak and source checks pass for the same commit. <code>SHA256SUMS</code> and
+            <code>dev-build.json</code> record file integrity and where each build came from.
+          </p>
+        </li>
+        <li>
+          <div>
+            <h3>Occultation</h3>
+            <p class="tag">Debug-signed APKs</p>
+          </div>
+          <p>
+            Download the <a href="https://github.com/NotADeveloper4665/Occultation/releases/download/dev/Occultation-universal.apk">universal APK</a>
+            or find CPU-specific ones on the <a href="https://github.com/NotADeveloper4665/Occultation/releases/tag/dev">dev release</a>.
+            Recording, steady-delay buffering, adaptive bitrate and upscaling are planned, not built.
+          </p>
+        </li>
+      </ul>
     </section>
 
   </main>
 
   <footer class="footer">
-    <span>© 2026 NotADeveloper4665. <span data-gh="license-inline"></span></span>
+    <span>© 2026 NotADeveloper4665. Each project keeps its upstream license; see its repository.</span>
     <span>
       <a href="https://github.com/NotADeveloper4665/Syzygy">Syzygy</a>
       <a href="https://github.com/NotADeveloper4665/Eclipse">Eclipse</a>
       <a href="https://github.com/NotADeveloper4665/Occultation">Occultation</a>
-      <a href="https://github.com/NotADeveloper4665/Umbral/issues">Issues</a>
-      <a href="https://github.com/NotADeveloper4665/Umbral/releases">Releases</a>
+      <a href="https://github.com/NotADeveloper4665/Umbral">Umbral</a>
     </span>
   </footer>
 
