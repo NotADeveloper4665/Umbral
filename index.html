@@ -6,6 +6,11 @@
   <title>Umbral</title>
   <meta name="description" content="Syzygy hosts a Linux desktop; Eclipse and Occultation stream it to a Linux computer or an Android device.">
   <meta name="theme-color" content="#141218">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Umbral">
+  <meta property="og:description" content="Syzygy hosts a Linux desktop; Eclipse and Occultation stream it to a Linux computer or an Android device.">
+  <meta property="og:image" content="https://notadeveloper4665.github.io/Umbral/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,6 +25,7 @@
       <a href="#how">How it fits</a>
       <a href="#install-host">Install</a>
       <a href="#pairing">Pairing</a>
+      <a href="#screenshots">Screenshots</a>
       <a href="#builds">Builds</a>
     </nav>
     <a class="btn btn--tonal" href="https://github.com/NotADeveloper4665/Umbral">GitHub</a>
@@ -111,6 +117,48 @@ syzygy -psk</code></pre>
           <p>The client saves a certificate, not the phrase, and uses it for every later connection.</p>
         </li>
       </ol>
+    </section>
+
+    <section id="screenshots" class="section">
+      <h2>Screenshots</h2>
+      <p class="muted">The first three are real screenshots from development builds. The ones marked with an asterisk are illustrations.</p>
+
+      <div class="gallery">
+        <figure class="wide">
+          <img src="assets/eclipse-quick-menu.png" width="1920" height="1080" loading="lazy"
+               alt="Eclipse's in-session quick menu over a streamed Linux desktop, with a General tab, action buttons and live stream statistics for frame rate, latency, decode time, frame loss and bandwidth.">
+          <figcaption>Eclipse: the in-session control center, with live stream statistics.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/eclipse-add-pc.png" width="800" height="560" loading="lazy"
+               alt="Eclipse's Add PC dialog with a host address field and an optional Syzygy pairing phrase field.">
+          <figcaption>Eclipse: the Add PC dialog (cropped), with an optional Syzygy pairing phrase.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/syzygy-pairing-phrase.png" width="922" height="100" loading="lazy"
+               alt="A terminal running syzygy -psk, which prints a sensitive pairing phrase. The phrase is covered in this image.">
+          <figcaption>Syzygy: <code>syzygy -psk</code> prints the pairing phrase. It's hidden here.</figcaption>
+        </figure>
+      </div>
+
+      <div class="gallery gallery--illustrated">
+        <figure>
+          <img src="assets/occultation-add-computer.png" width="1080" height="1080" loading="lazy"
+               alt="Illustration of Occultation's Add Computer dialog with a host address field and an optional Syzygy pairing phrase field.">
+          <figcaption>Occultation: Add Computer, with an optional pairing phrase. *</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/occultation-input-permissions.png" width="1080" height="1280" loading="lazy"
+               alt="Illustration of Occultation's settings, showing input permission switches for view-only mode, keyboard, mouse, touch and pen, and controller, and a Connect straight to Desktop switch.">
+          <figcaption>Occultation: input permissions and direct Desktop connection. *</figcaption>
+        </figure>
+        <figure class="wide">
+          <img src="assets/syzygy-network-setting.png" width="1920" height="540" loading="lazy"
+               alt="Illustration of Syzygy's web UI Network page, showing the Automatically authorize same-tailnet devices setting set to Disabled.">
+          <figcaption>Syzygy: the same-tailnet authorization setting, off by default. *</figcaption>
+        </figure>
+        <p class="footnote">* Illustrations, not screenshots. They use the text from each project's source and may not fully represent the current UI.</p>
+      </div>
     </section>
 
     <section id="install-host" class="section section--split">
