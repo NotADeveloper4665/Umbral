@@ -1,6 +1,6 @@
 # Umbral
 
-Umbral is a host and two clients for streaming a Linux desktop to another computer or an Android device. It is built from forks of existing streaming software, patched to make remote use less painful.
+Umbral is a family of forked software consisting of a host and two clients for streaming a Linux desktop remotely: Syzygy (host), Eclipse (Linux client) and Occultation (Android client). Forked from Apollo and Moonlight.
 
 Website: https://notadeveloper4665.github.io/Umbral/
 
