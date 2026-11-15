@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Umbral</title>
+  <meta name="description" content="A collection of forked software that makes Linux virtual desktops easier to use in remote situations.">
+  <meta name="theme-color" content="#141218">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-repo="NotADeveloper4665/Umbral">
+
+  <header class="app-bar">
+    <a class="app-bar__title" href="#top">Umbral</a>
+    <nav class="app-bar__nav" aria-label="Primary">
+      <a href="#features">Components</a>
+      <a href="#install">Install</a>
+      <a href="#usage">Usage</a>
+    </nav>
+    <a class="btn btn--tonal" href="https://github.com/NotADeveloper4665/Umbral">GitHub</a>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="hero__text">
+        <p class="overline" data-gh="version">Latest release</p>
+        <h1>Linux virtual desktops that work better over a remote connection.</h1>
+        <p class="lead">
+          Umbral is a host and two clients, forked from Apollo and Moonlight, for streaming a
+          Linux desktop to another machine or your phone.
+        </p>
+        <div class="actions">
+          <a class="btn btn--filled" href="#install">Get started</a>
+          <a class="btn btn--outlined" href="https://github.com/NotADeveloper4665/Umbral">View source</a>
+        </div>
+        <dl class="facts">
+          <div><dt>Stars</dt><dd data-gh="stars">–</dd></div>
+          <div><dt>Language</dt><dd data-gh="language">–</dd></div>
+          <div><dt>License</dt><dd data-gh="license">–</dd></div>
+          <div><dt>Updated</dt><dd data-gh="updated">–</dd></div>
+        </dl>
+      </div>
+
+      <div class="card code-card" aria-label="Quick install">
+        <div class="code-card__bar">
+          <span>terminal</span>
+          <button class="icon-btn" type="button" data-copy="#quick" aria-label="Copy command">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+          </button>
+        </div>
+<pre><code id="quick">git clone https://github.com/NotADeveloper4665/Umbral.git
+cd Umbral</code></pre>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Components</h2>
+      <p class="muted">Umbral is three projects that work together: one host and two clients.</p>
+      <ul class="rows">
+        <li>
+          <div>
+            <h3><a href="https://github.com/NotADeveloper4665/Syzygy">Syzygy</a></h3>
+            <p class="tag">Host · fork of Apollo</p>
+          </div>
+          <p>The self-hosted side that streams a desktop to Moonlight-compatible clients. It adds a Linux command-line setup, passkey and six-word phrase pairing, and a headless Wayland desktop mode that works over SSH. Licensed GPL-3.0. It's an early development build.</p>
+        </li>
+        <li>
+          <div>
+            <h3><a href="https://github.com/NotADeveloper4665/Eclipse">Eclipse</a></h3>
+            <p class="tag">Desktop client · based on Moonlight</p>
+          </div>
+          <p>The desktop streaming client. It has an in-session control center, Tailscale discovery, per-PC stream profiles, decoder diagnostics, and key-based pairing with Syzygy hosts. It keeps Moonlight's license and upstream notices.</p>
+        </li>
+        <li>
+          <div>
+            <h3><a href="https://github.com/NotADeveloper4665/Occultation">Occultation</a></h3>
+            <p class="tag">Android client · fork of Artemide</p>
+          </div>
+          <p>Eclipse for Android, built on Artemide (itself based on Moonlight Android). It pairs with Syzygy using a six-word phrase, can limit input to view-only, and can skip the phrase when connected through Tailscale. It keeps the upstream GPL license and copyright notices.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="install" class="section section--split">
+      <div>
+        <h2>Install</h2>
+        <p class="muted">Requirements: list the distro, packages and versions you've tested on.</p>
+      </div>
+      <div class="card code-card">
+        <div class="code-card__bar">
+          <span>shell</span>
+          <button class="icon-btn" type="button" data-copy="#install-code" aria-label="Copy command">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+          </button>
+        </div>
+<pre><code id="install-code">git clone https://github.com/NotADeveloper4665/Umbral.git
+cd Umbral
+# build steps go here once the code is in the repo</code></pre>
+      </div>
+    </section>
+
+    <section id="usage" class="section section--split">
+      <div>
+        <h2>Usage</h2>
+        <p class="muted">Show the smallest example that starts a remote desktop session.</p>
+      </div>
+      <div class="card code-card">
+        <div class="code-card__bar">
+          <span>shell</span>
+          <button class="icon-btn" type="button" data-copy="#usage-code" aria-label="Copy code">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+          </button>
+        </div>
+<pre><code id="usage-code"># replace with the real command once it exists
+./umbral start --help</code></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 NotADeveloper4665. <span data-gh="license-inline"></span></span>
+    <span>
+      <a href="https://github.com/NotADeveloper4665/Syzygy">Syzygy</a>
+      <a href="https://github.com/NotADeveloper4665/Eclipse">Eclipse</a>
+      <a href="https://github.com/NotADeveloper4665/Occultation">Occultation</a>
+      <a href="https://github.com/NotADeveloper4665/Umbral/issues">Issues</a>
+      <a href="https://github.com/NotADeveloper4665/Umbral/releases">Releases</a>
+    </span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
