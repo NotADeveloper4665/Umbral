@@ -64,6 +64,12 @@ Anyone who holds the pairing phrase can pair with full host permissions. Share i
 - Occultation's recording, steady-delay buffering, adaptive bitrate and upscaling are planned.
 - Occultation's development APKs are debug-signed, not production releases.
 
+## AI development disclosure
+
+AI tools were used in developing Umbral and its component projects, including code, documentation and this website. The website in this repository was written with Claude, an AI assistant from Anthropic.
+
+AI-written code can contain mistakes, including security flaws. These are early development builds, so test them before relying on them. Take extra care with anything that grants access to your machine, such as Syzygy's pairing phrase, which gives a paired client full host permissions. If you find a bug or a security problem, open an issue in the relevant repository.
+
 ## Credits and licenses
 
 Built on Apollo, [Moonlight](https://moonlight-stream.org/), [Artemide](https://github.com/derflacco/moonlight-android) and Artemis. Each project keeps its upstream source history, license notices and copyrights. Syzygy is GPL-3.0; see each repository for its license.
