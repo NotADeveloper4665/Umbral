@@ -67,8 +67,11 @@ Anyone who holds the pairing phrase can pair with full host permissions. Share i
 ## AI development disclosure
 
 AI tools were used in developing Umbral and its component projects, including code, documentation and this website. The website in this repository was written with Claude, an AI assistant from Anthropic.
+Eclipse, Occultation, And Syzygy where written by Chat-GPT, an AI assistant from Open AI, and prompted by me.
 
 AI-written code can contain mistakes, including security flaws. These are early development builds, so test them before relying on them. Take extra care with anything that grants access to your machine, such as Syzygy's pairing phrase, which gives a paired client full host permissions. If you find a bug or a security problem, open an issue in the relevant repository.
+
+I understand peoples stance on vibe coded projects mostly being slop but i truly believe what sets my software apart from other "slop" is the effort put behind it. Im not trying to cram features that would have no practical application or viable path to development instead I am to find PR requests and comments on Reddit from the community asking for features and weighing it against achievable goals. While i dont think i will be the next vibeshine I am okay with that since that is not my end goal instead I simply want more options for a easier workflow for cloud gaming on a headless Linux system.
 
 ## Credits and licenses
 
